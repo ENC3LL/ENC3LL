@@ -1,4 +1,5 @@
-[![GitHub Streak](https://streak-stats.demolab.com/?user=ENC3LL)](https://git.io/streak-stats)
+### 📈 GitHub Activity Graph:
+![ENCELL's GitHub activity graph](https://activity-graph.herokuapp.com/graph?ENC3LL)
 
 ---
 
