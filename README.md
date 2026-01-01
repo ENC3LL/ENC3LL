@@ -1,34 +1,42 @@
 <div align="center">
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=F75C7E&center=true&vCenter=true&width=435&lines=SYSTEM+INITIALIZED...;USER:+ENC3LL;LOADING+STATISTICS...;STATUS:+ONLINE" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=VT323&size=30&pause=1000&color=00FF00&center=true&vCenter=true&width=435&lines=SYSTEM+BOOT_SEQUENCE...;CONNECTING+TO+SERVER...;STATUS:+ONLINE" alt="Typing SVG" />
 </a>
 
-<a href="https://github.com/ryo-ma/github-profile-trophy">
-  <img src="https://github-profile-trophy.vercel.app/?username=ENC3LL&theme=radical&no-frame=true&no-bg=true&margin-w=4" />
-</a>
+</div>
 
-<br/>
+diff
+! SYSTEM INITIALIZED...
+- USER: ENC3LL
++ ACCESS LEVEL: ADMIN
 
-<img src="https://github-readme-stats.vercel.app/api?username=ENC3LL&show_icons=true&theme=radical&rank_icon=github&count_private=true" height="180" alt="stats graph" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ENC3LL&layout=compact&theme=radical&hide_border=true&langs_count=6" height="180" alt="languages graph" />
+$cd /skills$ dir /o:n
 
-<br/>
+DIRECTORY OF C:\USERS\ENC3LL\SKILLS
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=ENC3LL&theme=react-dark&bg_color=0D1117&hide_border=true" width="96%" />
-
-<br/><br/>
-
+[DIR]  .
+[DIR]  ..
+[DIR]  AI_DEVELOPMENT
+[DIR]  GAME_ENGINE_UE5
+[DIR]  MACHINE_LEARNING
+       C++_CORE.cpp
+       JAVA_KNOWLEDGE.jar
+       PYTHON_SCRIPT.py
+       ALGORITHMS.exe
+       
+       4 File(s)    100% PRODUCTIVITY
+       3 Dir(s)     INFINITE POTENTIAL
+$ _
 <div align="center">
-  <img src="https://leetcard.jacoblin.cool/enc3ll?theme=dark&font=Fira%20Code&ext=contest" alt="LeetCode Stats" />
-  
-  <br/><br/>
-  
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENC3LL&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
 
-<br/>
+<table style="border: 2px solid #30363d; border-radius: 10px; background-color: #0d1117;"> <thead> <tr> <th colspan="2" style="text-align: left; background-color: #161b22; color: #00FF00; font-family: monospace;"> 🔴 🟡 🟢 &nbsp; root@ENC3LL:~/stats/monitor.exe </th> </tr> </thead> <tbody> <tr> <td align="center"> <img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DENC3LL%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26count_private%3Dtrue" height="160" /> </td> <td align="center"> <img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DENC3LL%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117" height="160" /> </td> </tr> <tr> <td colspan="2" align="center"> <img src="https://www.google.com/search?q=https://leetcard.jacoblin.cool/enc3ll%3Ftheme%3Ddark%26font%3DVT323%26ext%3Dcontest" width="100%" /> </td> </tr> </tbody> </table>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="https://www.google.com/search?q=https://github-readme-activity-graph.vercel.app/graph%3Fusername%3DENC3LL%26theme%3Dreact-dark%26bg_color%3D0D1117%26hide_border%3Dtrue%26area%3Dtrue" width="100%" />
 
 </div>
+
+<div align="left"> <code>root@ENC3LL:~$ shutdown -h now <span style="animation: blink 1s infinite;">_</span></code> </div>
+
+
+-----
