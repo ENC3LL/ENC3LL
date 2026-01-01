@@ -1,10 +1,9 @@
-<svg width="800" height="520" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" fill="#0D1117" rx="10" ry="10" />
   
   <style>
     .text { font-family: 'Courier New', monospace; font-size: 14px; fill: #00FF00; }
     .dim { fill: #8b949e; }
-    .cmd { fill: #ffffff; font-weight: bold; }
     .dir { fill: #58a6ff; font-weight: bold; }
     .file { fill: #e6edf3; }
     .green-glow { fill: #3fb950; text-shadow: 0 0 5px #3fb950; }
@@ -28,18 +27,16 @@
     <tspan x="20" dy="20" class="dir">[DIR]  MACHINE_LEARNING</tspan>
     <tspan x="20" dy="20" class="dir">[DIR]  WEB_DEV_STACK</tspan>
 
-    <tspan x="40" dy="30" class="dim">CORE_SKILLS:</tspan>
-    <tspan x="40" dy="20" class="file">|__ C++_CORE.cpp        <tspan fill="#79c0ff">&lt;HIGH_PRIORITY&gt;</tspan></tspan>
-    <tspan x="40" dy="20" class="file">|__ PYTHON_SCRIPT.py    <tspan fill="#79c0ff">&lt;AI_MODULES&gt;</tspan></tspan>
-    <tspan x="40" dy="20" class="file">|__ JAVA_KNOWLEDGE.jar  <tspan fill="#79c0ff">&lt;BACKEND&gt;</tspan></tspan>
+    <tspan x="40" dy="30" class="dim">CORE_SKILLS_STATISTICS:</tspan>
+    <tspan x="40" dy="20" class="file">|__ HTML5_INDEX.html    <tspan fill="#79c0ff">&lt;47.61%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ C++_CORE.cpp        <tspan fill="#79c0ff">&lt;19.34%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ JAVA_APP.jar        <tspan fill="#79c0ff">&lt;17.24%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ C_LOW_LEVEL.c       <tspan fill="#79c0ff">&lt;5.52%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ CSS3_STYLE.css      <tspan fill="#79c0ff">&lt;4.26%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ JAVASCRIPT_MAIN.js  <tspan fill="#79c0ff">&lt;3.47%&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ TYPESCRIPT_APP.ts   <tspan fill="#79c0ff">&lt;WEB_EXT&gt;</tspan></tspan>
+    <tspan x="40" dy="20" class="file">|__ CMAKE_BUILD.txt     <tspan fill="#79c0ff">&lt;2.56%&gt;</tspan></tspan>
 
-    <tspan x="40" dy="30" class="dim">WEB_STACK:</tspan>
-    <tspan x="40" dy="20" class="file">|__ MAIN.js</tspan>
-    <tspan x="40" dy="20" class="file">|__ APP.ts</tspan>
-    <tspan x="40" dy="20" class="file">|__ INDEX.html</tspan>
-    <tspan x="40" dy="20" class="file">|__ STYLE.css</tspan>
-
-    <tspan x="40" dy="40" class="dim">7 File(s)    100% PRODUCTIVITY</tspan>
     <tspan x="40" dy="20" class="dim">5 Dir(s)     READY FOR DEPLOYMENT</tspan>
 
     <tspan x="20" dy="40">$ _<tspan class="cursor">█</tspan></tspan>
