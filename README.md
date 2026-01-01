@@ -1,42 +1,34 @@
-<div align="center">
+```diff
++ > System initialized...
+- > User: ENCELL
++ > Access: GRANTED
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=VT323&size=30&pause=1000&color=00FF00&center=true&vCenter=true&width=435&lines=SYSTEM+BOOT_SEQUENCE...;CONNECTING+TO+SERVER...;STATUS:+ONLINE" alt="Typing SVG" />
-</a>
+! > cd /langs
+! > dir /s
 
-</div>
+  Directory of C:\USERS\ENC3LL\SOURCE_CODE
 
-diff
-! SYSTEM INITIALIZED...
-- USER: ENC3LL
-+ ACCESS LEVEL: ADMIN
++ [DIR]  ..
++ [DIR]  ARTIFICIAL_INTELLIGENCE
++ [DIR]  UNREAL_ENGINE_5
++ [DIR]  MACHINE_LEARNING
++ [DIR]  WEB_DEV_STACK
 
-$cd /skills$ dir /o:n
+       CORE_SKILLS:
+       |__ C++_CORE.cpp        <HIGH_PRIORITY>
+       |__ PYTHON_SCRIPT.py    <AI_MODULES>
+       |__ JAVA_KNOWLEDGE.jar  <BACKEND>
 
-DIRECTORY OF C:\USERS\ENC3LL\SKILLS
+       WEB_STACK:
+       |__ MAIN.js
+       |__ APP.ts
+       |__ INDEX.html
+       |__ STYLE.css
 
-[DIR]  .
-[DIR]  ..
-[DIR]  AI_DEVELOPMENT
-[DIR]  GAME_ENGINE_UE5
-[DIR]  MACHINE_LEARNING
-       C++_CORE.cpp
-       JAVA_KNOWLEDGE.jar
-       PYTHON_SCRIPT.py
-       ALGORITHMS.exe
-       
-       4 File(s)    100% PRODUCTIVITY
-       3 Dir(s)     INFINITE POTENTIAL
+       7 File(s)    100% PRODUCTIVITY
+       5 Dir(s)     READY FOR DEPLOYMENT
 $ _
-<div align="center">
+```
+<div align="center"> <table style="border: 2px solid #ffffff; border-radius: 4px; background-color: #000000; width: 100%;"> <thead> <tr> <th style="text-align: left; background-color: #333; color: #00FF00; font-family: monospace; padding: 5px 10px;"> > Productivity_Monitor.exe </th> </tr> </thead> <tbody> <tr> <td style="padding: 0; background-color: #000000;"> <img src="https://www.google.com/search?q=https://github-readme-activity-graph.vercel.app/graph%3Fusername%3DENC3LL%26bg_color%3D000000%26color%3Dffffff%26line%3Dffffff%26point%3Dffffff%26area%3Dtrue%26hide_border%3Dtrue%26hide_title%3Dtrue" width="100%" alt="Activity Graph" /> </td> </tr> </tbody> </table> </div>
 
-<table style="border: 2px solid #30363d; border-radius: 10px; background-color: #0d1117;"> <thead> <tr> <th colspan="2" style="text-align: left; background-color: #161b22; color: #00FF00; font-family: monospace;"> 🔴 🟡 🟢 &nbsp; root@ENC3LL:~/stats/monitor.exe </th> </tr> </thead> <tbody> <tr> <td align="center"> <img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DENC3LL%26show_icons%3Dtrue%26theme%3Dradical%26hide_border%3Dtrue%26bg_color%3D0d1117%26count_private%3Dtrue" height="160" /> </td> <td align="center"> <img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DENC3LL%26theme%3Dradical%26hide_border%3Dtrue%26background%3D0d1117" height="160" /> </td> </tr> <tr> <td colspan="2" align="center"> <img src="https://www.google.com/search?q=https://leetcard.jacoblin.cool/enc3ll%3Ftheme%3Ddark%26font%3DVT323%26ext%3Dcontest" width="100%" /> </td> </tr> </tbody> </table>
-
-<img src="https://www.google.com/search?q=https://github-readme-activity-graph.vercel.app/graph%3Fusername%3DENC3LL%26theme%3Dreact-dark%26bg_color%3D0D1117%26hide_border%3Dtrue%26area%3Dtrue" width="100%" />
-
-</div>
-
-<div align="left"> <code>root@ENC3LL:~$ shutdown -h now <span style="animation: blink 1s infinite;">_</span></code> </div>
-
-
------
+<div align="center"> <img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DENC3LL%26show_icons%3Dtrue%26theme%3Dgotham%26hide_border%3Dtrue%26bg_color%3D000000%26count_private%3Dtrue%26hide_title%3Dtrue" height="150" /> <img src="https://www.google.com/search?q=https://github-readme-streak-stats.herokuapp.com/%3Fuser%3DENC3LL%26theme%3Dgotham%26hide_border%3Dtrue%26background%3D000000%26hide_title%3Dtrue" height="150" /> </div>
