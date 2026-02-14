@@ -10,9 +10,5 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENC3LL&theme=dark&hide_border=true&background=0D1117&ring=00FF00&fire=00FF00&currStreakLabel=00FF00&hide_title=true" height="160" />
 </div>
 
-<div align="center">
-  <https://enc3ll.github.io/asakaro />
-  <https://enc3ll.github.io/index />
-</div>
 https://enc3ll.github.io/asakaro
 https://enc3ll.github.io/index
