@@ -11,8 +11,8 @@
 </div>
 
 <div align="center">
-  <[img src="terminal.svg" width="100%" alt="Terminal UI"](https://enc3ll.github.io/asakaro) />
-  <[[img src="terminal.svg" width="100%" alt="Terminal UI"](https://enc3ll.github.io/asakaro)](https://enc3ll.github.io/index) />
+  <https://enc3ll.github.io/asakaro />
+  <https://enc3ll.github.io/index />
 </div>
 https://enc3ll.github.io/asakaro
 https://enc3ll.github.io/index
