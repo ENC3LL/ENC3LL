@@ -10,5 +10,15 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENC3LL&theme=dark&hide_border=true&background=0D1117&ring=00FF00&fire=00FF00&currStreakLabel=00FF00&hide_title=true" height="160" />
 </div>
 
-https://enc3ll.github.io/asakaro
-https://enc3ll.github.io/CLS
+<div align="center">
+  <br>
+  
+  <a href="https://enc3ll.github.io/asakaro">
+    <img src="https://img.shields.io/badge/🚀_Asakaro-00FF00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Asakaro Project"/>
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://enc3ll.github.io/CLS">
+    <img src="https://img.shields.io/badge/⚡_CLS-00FF00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="CLS Project"/>
+  </a>
+  
+</div>
