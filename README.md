@@ -11,4 +11,4 @@
 </div>
 
 https://enc3ll.github.io/asakaro
-https://enc3ll.github.io/index
+https://enc3ll.github.io/CLS
