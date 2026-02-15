@@ -14,11 +14,11 @@
   <br>
   
   <a href="https://enc3ll.github.io/asakaro">
-    <img src="https://img.shields.io/badge/🚀_Asakaro-00FF00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Asakaro Project"/>
+    <img src="https://img.shields.io/badge/🚀_Asakaro-09DE00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Asakaro Project"/>
   </a>
   &nbsp;&nbsp;
   <a href="https://enc3ll.github.io/CLS">
-    <img src="https://img.shields.io/badge/⚡_CLS-00FF00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="CLS Project"/>
+    <img src="https://img.shields.io/badge/⚡_CLS-09DE00?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="CLS Project"/>
   </a>
   
 </div>
