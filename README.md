@@ -23,4 +23,8 @@
   
 </div>
 
-[![image](https://github.com/user-attachments/assets/793c9698-7585-4576-a6e5-9dd04cd963ba)](https://modrinth.com/user/ENCELL)
+<p align="center">
+  <a href="https://modrinth.com/user/ENCELL">
+    <img src="https://modfolio.creeperkatze.de/modrinth/user/ENCELL" alt="ENCELL Modrinth Stats">
+  </a>
+</p>
