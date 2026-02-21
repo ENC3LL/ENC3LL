@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="terminal.svg" width="100%" height="500" alt="ENC3LL — DYSTOPIA/OS" />
+  <img src="terminal.svg?v=2" width="100%" height="500" alt="ENC3LL — DYSTOPIA/OS" />
 </div>
 
 <br/>
