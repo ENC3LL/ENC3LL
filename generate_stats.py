@@ -56,19 +56,19 @@ def time_ago(iso_str):
 # ── Build SVG ───────────────────────────────────────────────────────────────
 
 def generate_svg(repo_count: int, recent_repo: dict) -> str:
-    repo_name  = recent_repo.get("name", "unknown")[:24]          # cap length
+    repo_name  = recent_repo.get("name", "unknown")[:22]          # cap length
     repo_lang  = recent_repo.get("language") or "—"
     repo_stars = recent_repo.get("stargazers_count", 0)
-    repo_desc  = (recent_repo.get("description") or "no description")[:42]
+    repo_desc  = (recent_repo.get("description") or "no description")[:36]
     pushed_at  = recent_repo.get("pushed_at", "")
     pushed_str = time_ago(pushed_at) if pushed_at else "?"
     repo_url   = recent_repo.get("html_url", f"https://github.com/{GITHUB_USER}")
 
     # truncate desc with ellipsis if needed
-    if len(repo_desc) == 42:
+    if len(repo_desc) == 36:
         repo_desc = repo_desc[:-1] + "…"
 
-    svg = f"""<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+    svg = f"""<svg width="900" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       @keyframes blink {{
@@ -122,29 +122,29 @@ def generate_svg(repo_count: int, recent_repo: dict) -> str:
   </defs>
 
   <!-- BASE -->
-  <rect width="900" height="500" fill="url(#fog)"/>
+  <rect width="800" height="500" fill="url(#fog)"/>
 
   <!-- faint city silhouette verticals -->
-  <rect x="120" y="80"  width="2" height="420" fill="#0d1620" opacity="0.7"/>
-  <rect x="240" y="130" width="1" height="370" fill="#0d1620" opacity="0.4"/>
-  <rect x="480" y="55"  width="3" height="445" fill="#0d1620" opacity="0.5"/>
-  <rect x="650" y="100" width="2" height="400" fill="#0d1620" opacity="0.4"/>
-  <rect x="780" y="140" width="1" height="360" fill="#0d1620" opacity="0.3"/>
-  <rect x="60"  y="210" width="1" height="290" fill="#0d1620" opacity="0.3"/>
-  <rect x="830" y="90"  width="2" height="410" fill="#0d1620" opacity="0.35"/>
+  <rect x="100" y="80"  width="2" height="420" fill="#0d1620" opacity="0.7"/>
+  <rect x="210" y="130" width="1" height="370" fill="#0d1620" opacity="0.4"/>
+  <rect x="400" y="55"  width="3" height="445" fill="#0d1620" opacity="0.5"/>
+  <rect x="560" y="100" width="2" height="400" fill="#0d1620" opacity="0.4"/>
+  <rect x="680" y="140" width="1" height="360" fill="#0d1620" opacity="0.3"/>
+  <rect x="50"  y="210" width="1" height="290" fill="#0d1620" opacity="0.3"/>
+  <rect x="740" y="90"  width="2" height="410" fill="#0d1620" opacity="0.35"/>
 
   <!-- scanline -->
-  <rect x="0" y="0" width="900" height="80" fill="url(#scanGrad)">
+  <rect x="0" y="0" width="800" height="80" fill="url(#scanGrad)">
     <animateTransform attributeName="transform" type="translate" values="0,0;0,500" dur="7s" repeatCount="indefinite"/>
   </rect>
 
   <!-- ── TOP BAR ── -->
-  <rect x="0" y="0" width="900" height="28" fill="#04070c"/>
-  <rect x="0" y="27" width="900" height="1" fill="url(#redLine)"/>
+  <rect x="0" y="0" width="800" height="28" fill="#04070c"/>
+  <rect x="0" y="27" width="800" height="1" fill="url(#redLine)"/>
   <text x="20" y="18" font-family="'Courier New', monospace" font-size="10" fill="#3a5060" letter-spacing="2">DYSTOPIA/OS</text>
-  <text x="450" y="18" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#223040" letter-spacing="3">NODE — OFFLINE — SEARCHING</text>
-  <circle cx="864" cy="14" r="3" fill="#c0392b" class="pulse" filter="url(#glow-red)"/>
-  <text x="876" y="18" font-family="'Courier New', monospace" font-size="9" fill="#3a1a1a" letter-spacing="1">NO SIG</text>
+  <text x="400" y="18" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#223040" letter-spacing="3">NODE — OFFLINE — SEARCHING</text>
+  <circle cx="764" cy="14" r="3" fill="#c0392b" class="pulse" filter="url(#glow-red)"/>
+  <text x="776" y="18" font-family="'Courier New', monospace" font-size="9" fill="#3a1a1a" letter-spacing="1">NO SIG</text>
 
   <!-- ── IDENTITY ── -->
   <text x="48" y="110" font-family="'Courier New', monospace" font-size="36" fill="#c0392b"
