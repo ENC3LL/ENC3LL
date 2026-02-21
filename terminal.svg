@@ -138,7 +138,7 @@
     <!-- recently updated repo — dynamic -->
     <tspan x="48"  y="380" font-size="11" fill="#3a6070">LAST PUSH  </tspan>
     <tspan font-size="12" fill="#8ab4c8">enc3ll.github.io</tspan>
-    <tspan font-size="9"  fill="#2a4555">  ·  56m ago</tspan>
+    <tspan font-size="9"  fill="#2a4555">  ·  58m ago</tspan>
 
     <tspan x="48"  y="396" font-size="9" fill="#1e3a4a">           JavaScript  ·  ★ 1  ·  no description</tspan>
 
@@ -150,7 +150,7 @@
 
   <!-- right col: CONTACT -->
   <text font-family="'Courier New', monospace">
-    <tspan x="520" y="362" font-size="9"  fill="#2a4555" letter-spacing="3">CONTACT  //</tspan>
+    <tspan x="520" y="362" font-size="9"  fill="#2a4555" letter-spacing="3">CONTACT  //  OPEN TO WORK</tspan>
     <tspan x="520" y="384" font-size="11" fill="#4a7a90">✉  encell@asakaro.ru</tspan>
     <tspan x="520" y="402" font-size="11" fill="#4a7a90">⬡  linkedin · vyacheslav-blagodarov</tspan>
     <tspan x="520" y="420" font-size="11" fill="#4a7a90">⌥  github.com/ENC3LL</tspan>
