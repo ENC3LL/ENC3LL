@@ -1,0 +1,265 @@
+import requests
+import os
+import json
+from datetime import datetime, timezone
+
+GITHUB_USER = "ENC3LL"
+TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+headers = {
+    "Authorization": f"Bearer {TOKEN}",
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28"
+}
+
+# ── Fetch data ──────────────────────────────────────────────────────────────
+
+def fetch_user():
+    r = requests.get(f"https://api.github.com/users/{GITHUB_USER}", headers=headers)
+    return r.json()
+
+def fetch_recent_repo():
+    """Get the most recently pushed-to public repo (excluding the profile repo itself)."""
+    r = requests.get(
+        f"https://api.github.com/users/{GITHUB_USER}/repos",
+        headers=headers,
+        params={"sort": "pushed", "direction": "desc", "per_page": 10, "type": "public"}
+    )
+    repos = r.json()
+    for repo in repos:
+        if repo["name"].upper() == GITHUB_USER.upper():
+            continue   # skip the profile readme repo
+        return repo
+    return repos[0] if repos else None
+
+def time_ago(iso_str):
+    """Convert ISO timestamp to human-readable relative time."""
+    dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
+    now = datetime.now(timezone.utc)
+    delta = now - dt
+    seconds = int(delta.total_seconds())
+    if seconds < 3600:
+        m = seconds // 60
+        return f"{m}m ago" if m > 1 else "just now"
+    elif seconds < 86400:
+        h = seconds // 3600
+        return f"{h}h ago"
+    elif seconds < 86400 * 7:
+        d = seconds // 86400
+        return f"{d}d ago"
+    elif seconds < 86400 * 30:
+        w = seconds // (86400 * 7)
+        return f"{w}w ago"
+    else:
+        return dt.strftime("%b %Y")
+
+# ── Build SVG ───────────────────────────────────────────────────────────────
+
+def generate_svg(repo_count: int, recent_repo: dict) -> str:
+    repo_name  = recent_repo.get("name", "unknown")[:24]          # cap length
+    repo_lang  = recent_repo.get("language") or "—"
+    repo_stars = recent_repo.get("stargazers_count", 0)
+    repo_desc  = (recent_repo.get("description") or "no description")[:42]
+    pushed_at  = recent_repo.get("pushed_at", "")
+    pushed_str = time_ago(pushed_at) if pushed_at else "?"
+    repo_url   = recent_repo.get("html_url", f"https://github.com/{GITHUB_USER}")
+
+    # truncate desc with ellipsis if needed
+    if len(repo_desc) == 42:
+        repo_desc = repo_desc[:-1] + "…"
+
+    svg = f"""<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes blink {{
+        0%, 49% {{ opacity: 1; }}
+        50%, 100% {{ opacity: 0; }}
+      }}
+      @keyframes flicker-slow {{
+        0%, 92%, 100% {{ opacity: 1; }}
+        93% {{ opacity: 0.4; }}
+        95% {{ opacity: 1; }}
+        97% {{ opacity: 0.6; }}
+      }}
+      @keyframes pulse {{
+        0%, 100% {{ opacity: 0.5; }}
+        50% {{ opacity: 1; }}
+      }}
+      .cursor  {{ animation: blink 1.2s step-end infinite; }}
+      .flicker {{ animation: flicker-slow 12s ease-in-out infinite; }}
+      .pulse   {{ animation: pulse 2.5s ease-in-out infinite; }}
+    </style>
+
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#050810"/>
+    </linearGradient>
+    <linearGradient id="redLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#c0392b" stop-opacity="0"/>
+      <stop offset="6%"   stop-color="#c0392b" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#c0392b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c0392b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00b4cc" stop-opacity="0"/>
+      <stop offset="4%"   stop-color="#00b4cc" stop-opacity="0.4"/>
+      <stop offset="60%"  stop-color="#00b4cc" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00b4cc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00b4cc" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00b4cc" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#00b4cc" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- BASE -->
+  <rect width="900" height="500" fill="url(#fog)"/>
+
+  <!-- faint city silhouette verticals -->
+  <rect x="120" y="80"  width="2" height="420" fill="#0d1620" opacity="0.7"/>
+  <rect x="240" y="130" width="1" height="370" fill="#0d1620" opacity="0.4"/>
+  <rect x="480" y="55"  width="3" height="445" fill="#0d1620" opacity="0.5"/>
+  <rect x="650" y="100" width="2" height="400" fill="#0d1620" opacity="0.4"/>
+  <rect x="780" y="140" width="1" height="360" fill="#0d1620" opacity="0.3"/>
+  <rect x="60"  y="210" width="1" height="290" fill="#0d1620" opacity="0.3"/>
+  <rect x="830" y="90"  width="2" height="410" fill="#0d1620" opacity="0.35"/>
+
+  <!-- scanline -->
+  <rect x="0" y="0" width="900" height="80" fill="url(#scanGrad)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,500" dur="7s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ── TOP BAR ── -->
+  <rect x="0" y="0" width="900" height="28" fill="#04070c"/>
+  <rect x="0" y="27" width="900" height="1" fill="url(#redLine)"/>
+  <text x="20" y="18" font-family="'Courier New', monospace" font-size="10" fill="#3a5060" letter-spacing="2">DYSTOPIA/OS</text>
+  <text x="450" y="18" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#223040" letter-spacing="3">NODE — OFFLINE — SEARCHING</text>
+  <circle cx="864" cy="14" r="3" fill="#c0392b" class="pulse" filter="url(#glow-red)"/>
+  <text x="876" y="18" font-family="'Courier New', monospace" font-size="9" fill="#3a1a1a" letter-spacing="1">NO SIG</text>
+
+  <!-- ── IDENTITY ── -->
+  <text x="48" y="110" font-family="'Courier New', monospace" font-size="36" fill="#c0392b"
+        letter-spacing="8" filter="url(#glow-red)" class="flicker" font-weight="bold">ENC3LL</text>
+  <text x="48" y="138" font-family="'Courier New', monospace" font-size="11" fill="#3a6070" letter-spacing="4">SYSTEM_ARCHITECT  //  SECTOR UNKNOWN</text>
+  <rect x="48" y="146" width="200" height="1" fill="#c0392b" opacity="0.5"/>
+  <rect x="48" y="147" width="60"  height="1" fill="#c0392b" opacity="0.2"/>
+
+  <!-- ── SKILLS ── -->
+  <text font-family="'Courier New', monospace">
+    <tspan x="48" y="178" font-size="9" fill="#2a4555" letter-spacing="3">CORE STACK  //  PRIORITY ORDER</tspan>
+
+    <tspan x="48"  y="204" font-size="13" fill="#c0392b" filter="url(#glow-soft)">01</tspan>
+    <tspan font-size="13" fill="#8ab4c8"> C++</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  LOW_LEVEL  ·  PERFORMANCE  ·  SYSTEMS</tspan>
+
+    <tspan x="48"  y="224" font-size="13" fill="#c0392b" filter="url(#glow-soft)">02</tspan>
+    <tspan font-size="13" fill="#8ab4c8"> AI / ML</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  NEURAL_NET  ·  INFERENCE  ·  TRAINING</tspan>
+
+    <tspan x="48"  y="244" font-size="13" fill="#c0392b" filter="url(#glow-soft)">03</tspan>
+    <tspan font-size="13" fill="#8ab4c8"> GAME DEV</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  ENGINE_ARCH  ·  PHYSICS  ·  RENDER</tspan>
+
+    <tspan x="48"  y="264" font-size="13" fill="#c0392b" filter="url(#glow-soft)">04</tspan>
+    <tspan font-size="13" fill="#8ab4c8"> UNREAL ENGINE 5</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  MOVER_2.0  ·  BLUEPRINTS  ·  C++ API</tspan>
+
+    <tspan x="48"  y="284" font-size="13" fill="#c0392b" filter="url(#glow-soft)">05</tspan>
+    <tspan font-size="13" fill="#8ab4c8"> WEB</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  HTML  ·  CSS  ·  JS  ·  TS</tspan>
+  </text>
+
+  <!-- ── DIVIDER ── -->
+  <rect x="48" y="302" width="804" height="1" fill="#0e1c28" opacity="0.9"/>
+
+  <!-- ── RIGHT: terminal ping ── -->
+  <text font-family="'Courier New', monospace" font-size="12">
+    <tspan x="520" y="175" fill="#2a4a5a">$ ping world</tspan>
+    <tspan x="520" y="195" fill="#1e3a4a">  timeout · icmp_seq 0</tspan>
+    <tspan x="520" y="213" fill="#1a3445">  timeout · icmp_seq 1</tspan>
+    <tspan x="520" y="231" fill="#152e40">  timeout · icmp_seq 2</tspan>
+    <tspan x="520" y="249" fill="#102840">  ···</tspan>
+    <tspan x="520" y="275" fill="#2a4a5a">$ whoami</tspan>
+    <tspan x="520" y="293" fill="#1e3a4a">  enc3ll — node unregistered</tspan>
+    <tspan x="520" y="311" fill="#1a3445">  clearance : unknown</tspan>
+    <tspan x="520" y="337" fill="#3a6070">$ _</tspan>
+    <tspan fill="#3a6070" class="cursor">█</tspan>
+  </text>
+
+  <!-- ── BOTTOM SECTION ── -->
+
+  <!-- left col: REPOS + RECENT -->
+  <text font-family="'Courier New', monospace">
+    <tspan x="48" y="332" font-size="9" fill="#2a4555" letter-spacing="3">CURRENT STATUS</tspan>
+
+    <!-- repo count — dynamic -->
+    <tspan x="48"  y="358" font-size="11" fill="#3a6070">REPOS      </tspan>
+    <tspan font-size="14" fill="#c0392b" filter="url(#glow-soft)">{repo_count}</tspan>
+
+    <!-- recently updated repo — dynamic -->
+    <tspan x="48"  y="380" font-size="11" fill="#3a6070">LAST PUSH  </tspan>
+    <tspan font-size="12" fill="#8ab4c8">{repo_name}</tspan>
+    <tspan font-size="9"  fill="#2a4555">  ·  {pushed_str}</tspan>
+
+    <tspan x="48"  y="396" font-size="9" fill="#1e3a4a">           {repo_lang}  ·  ★ {repo_stars}  ·  {repo_desc}</tspan>
+
+    <!-- currently building -->
+    <tspan x="48" y="422" font-size="9"  fill="#2a4555" letter-spacing="3">CURRENTLY BUILDING</tspan>
+    <tspan x="48" y="442" font-size="12" fill="#8ab4c8">{repo_name}</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  {repo_lang}  ·  active</tspan>
+  </text>
+
+  <!-- right col: CONTACT -->
+  <text font-family="'Courier New', monospace">
+    <tspan x="520" y="362" font-size="9"  fill="#2a4555" letter-spacing="3">CONTACT  //  OPEN TO WORK</tspan>
+    <tspan x="520" y="384" font-size="11" fill="#4a7a90">✉  encell@asakaro.ru</tspan>
+    <tspan x="520" y="402" font-size="11" fill="#4a7a90">⬡  linkedin · vyacheslav-blagodarov</tspan>
+    <tspan x="520" y="420" font-size="11" fill="#4a7a90">⌥  github.com/ENC3LL</tspan>
+  </text>
+
+  <!-- ── BOTTOM BAR ── -->
+  <rect x="0" y="491" width="900" height="1" fill="url(#cyanLine)"/>
+  <rect x="0" y="492" width="900" height="8" fill="#04070c"/>
+  <text x="48" y="488" font-family="'Courier New', monospace" font-size="8" fill="#1a3040" letter-spacing="1">
+    NETWORK UNREACHABLE  ·  LAST SYNC: UNKNOWN  ·  COORDINATES: NULL
+  </text>
+
+  <!-- corners -->
+  <polyline points="0,12 0,0 12,0"           fill="none" stroke="#c0392b" stroke-width="1" opacity="0.5"/>
+  <polyline points="888,0 900,0 900,12"       fill="none" stroke="#c0392b" stroke-width="1" opacity="0.2"/>
+  <polyline points="0,488 0,500 12,500"       fill="none" stroke="#00b4cc" stroke-width="1" opacity="0.2"/>
+  <polyline points="888,500 900,500 900,488"  fill="none" stroke="#00b4cc" stroke-width="1" opacity="0.2"/>
+</svg>"""
+
+    return svg
+
+# ── Main ────────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    print("Fetching GitHub data...")
+    user = fetch_user()
+    repo_count = user.get("public_repos", "?")
+    print(f"  repos: {repo_count}")
+
+    recent = fetch_recent_repo()
+    if recent:
+        print(f"  recent repo: {recent['name']} (pushed {recent.get('pushed_at', '?')})")
+    else:
+        recent = {"name": "unknown", "language": "—", "stargazers_count": 0,
+                  "description": "", "pushed_at": "", "html_url": ""}
+
+    svg = generate_svg(repo_count, recent)
+
+    with open("terminal.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+
+    print("terminal.svg written successfully.")
