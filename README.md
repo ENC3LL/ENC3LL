@@ -19,6 +19,6 @@
 
 <div align="center">
   <a href="https://modrinth.com/user/ENCELL">
-    <img src="https://modfolio.creeperkatze.de/modrinth/user/ENCELL" alt="ENCELL Modrinth Stats"/>
+    <img src="https://modfolio.creeperkatze.dev/modrinth/user/ENCELL" alt="ENCELL Modrinth Stats"/>
   </a>
 </div>
