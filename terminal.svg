@@ -137,15 +137,15 @@
 
     <!-- recently updated repo — dynamic -->
     <tspan x="48"  y="380" font-size="11" fill="#3a6070">LAST PUSH  </tspan>
-    <tspan font-size="12" fill="#8ab4c8">enc3ll.github.io</tspan>
-    <tspan font-size="9"  fill="#2a4555">  ·  4d ago</tspan>
+    <tspan font-size="12" fill="#8ab4c8">cpp</tspan>
+    <tspan font-size="9"  fill="#2a4555">  ·  3h ago</tspan>
 
-    <tspan x="48"  y="396" font-size="9" fill="#1e3a4a">           HTML  ·  ★ 1  ·  no description</tspan>
+    <tspan x="48"  y="396" font-size="9" fill="#1e3a4a">           —  ·  ★ 1  ·  cpplib</tspan>
 
     <!-- currently building -->
     <tspan x="48" y="422" font-size="9"  fill="#2a4555" letter-spacing="3">CURRENTLY BUILDING</tspan>
-    <tspan x="48" y="442" font-size="12" fill="#8ab4c8">enc3ll.github.io</tspan>
-    <tspan font-size="9"  fill="#2e4e62">  ·  HTML  ·  active</tspan>
+    <tspan x="48" y="442" font-size="12" fill="#8ab4c8">cpp</tspan>
+    <tspan font-size="9"  fill="#2e4e62">  ·  —  ·  active</tspan>
   </text>
 
   <!-- right col: CONTACT -->
