@@ -133,7 +133,7 @@
 
     <!-- repo count — dynamic -->
     <tspan x="48"  y="358" font-size="11" fill="#3a6070">REPOS      </tspan>
-    <tspan font-size="14" fill="#c0392b" filter="url(#glow-soft)">21</tspan>
+    <tspan font-size="14" fill="#c0392b" filter="url(#glow-soft)">20</tspan>
 
     <!-- recently updated repo — dynamic -->
     <tspan x="48"  y="380" font-size="11" fill="#3a6070">LAST PUSH  </tspan>
